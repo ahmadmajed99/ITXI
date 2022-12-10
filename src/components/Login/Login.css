@@ -1,0 +1,59 @@
+.Login-Container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 48vw;
+  overflow: hidden;
+}
+
+.LoginForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.email input {
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 1px;
+  background: #f3f1f1;
+  padding: 0.5vw;
+}
+
+.password input {
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 1px;
+  background: #f3f1f1;
+  padding: 0.5vw;
+}
+
+.btn-login button {
+  border: none;
+  border-radius: 20px;
+  padding: 0.8vw 2vw;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.googleLogin {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+
+@media screen and (max-width: 700px) {
+  .Login-Container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 60vw;
+  }
+
+  .Login-Logo {
+    display: none;
+  }
+}

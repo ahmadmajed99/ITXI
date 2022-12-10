@@ -1,0 +1,101 @@
+.searchContainer {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(63, 34, 34, 0.1), rgba(0, 0, 0, 0.9)),
+    url(../../Images/Open-Book.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.wrapperSearch {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+}
+
+.searchContainer h1 {
+  font-size: 5vw;
+  margin-bottom: 2vw;
+  color: azure;
+}
+
+.search__bar {
+  width: 40vw;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 0.5vw;
+  backdrop-filter: blur(4px) saturate(180%);
+  position: relative;
+}
+
+.search__bar input {
+  background-color: transparent;
+  border: 0;
+  color: #cac7ff;
+  font-size: 1vw;
+  font-weight: bold;
+  padding: 0.5vw;
+  outline: none;
+}
+
+::placeholder {
+  color: #cac7ff;
+}
+
+.search__bar i {
+  right: 1vw;
+  width: 2vw;
+  height: 1vw;
+  cursor: pointer;
+  position: absolute;
+}
+
+.searchList {
+  width: 100%;
+  padding: 3px 10px;
+  backdrop-filter: blur(4px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0;
+  padding: 20px 15px;
+  color: #cac7ff;
+  font-size: 1vw;
+  font-weight: 500;
+}
+
+.listerizo {
+  position: fixed;
+  top: 3.8vw;
+  left: 1vw;
+  padding: 0 5px;
+  max-height: 20vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 38vw;
+}
+
+.listerizo a {
+  text-decoration: none;
+}
+
+.logout {
+  position: absolute;
+  width: 10vw;
+  top: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .searchContainer h1 {
+    font-size: 10vw;
+  }
+
+  .search__bar input {
+    font-size: 2vw;
+    /* padding: 2vw; */
+    width: 50vw;
+  }
+}
