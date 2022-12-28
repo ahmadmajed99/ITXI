@@ -1,8 +1,7 @@
 import { GoogleLogout } from "react-google-login";
 import { useNavigate } from "react-router-dom";
 
-const client_id =
-  "778513930561-lp2v2hq2taq7m47bcocq6el2pa1jkkcq.apps.googleusercontent.com";
+const client_id = `${window.env.CLIENT_ID}`;
 
 function Logout() {
   const navigate = useNavigate();

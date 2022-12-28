@@ -1,32 +1,34 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import LogoutButton from "../Logout/Logout";
-import "./AuthorPage.css";
-import { useNavigate } from "react-router-dom";
 
+import "./AuthorPage.css";
+
+import { useNavigate } from "react-router-dom";
+import LogoutButton from "../../components/Logout/Logout";
+
+import { getBooksByQuery } from "../../actions/books";
+
+// TODO: use memo here
 const AuthorPage = () => {
-  const [error, setError] = useState(null);
   const [query, setQuery] = useState("");
   const [bookData, SetBooks] = useState([]);
 
   // &filter=free-ebooks
 
-  const GetData = async () => {
-    try {
-      const response = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=` +
-          query +
-          `&orderBy=newest&maxResults=40
-          `
-      );
-      SetBooks(response.data.items);
-    } catch (err) {
-      setError(err);
-    }
-  };
-
   useEffect(() => {
-    GetData();
+    // TODO: use usecallback here
+    const getData = async () => {
+      try {
+        const response = await getBooksByQuery(query);
+        SetBooks(response.data.items);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    query &&
+      setTimeout(() => {
+        getData();
+      }, 3000);
   }, [query]);
 
   const navigate = useNavigate();
@@ -51,16 +53,14 @@ const AuthorPage = () => {
             <i class="fa-solid fa-magnifying-glass"></i>
             <div className="listerizo">
               {query
-                ? bookData.map((item) => {
+                ? bookData.map((item, index) => {
                     return (
                       <>
                         {item.volumeInfo.authors ? (
-                          // <a href="cardpage">
-                          <div className="searchList">
+                          <div className="searchList" key={index}>
                             {item.volumeInfo.authors}
                           </div>
-                        ) : // </a>
-                        null}
+                        ) : null}
                       </>
                     );
                   })

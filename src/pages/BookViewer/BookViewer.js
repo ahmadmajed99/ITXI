@@ -43,7 +43,7 @@ const BookViewer = () => {
         });
       }
     }
-  }, [loaded]);
+  }, [loaded, ISBN_num]);
 
   return (
     <div className="viewerContainer">

@@ -1,35 +1,41 @@
 #viewerCanvas {
-  width: 704px;
+  width: 37vw;
   height: 880px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .viewerContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  max-width: 1500px;
+  gap: 4rem;
   margin: auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  width: 70vw;
 }
 
 .viewerProps {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 3rem;
 }
 
 .viewerImage {
-  width: 300px;
-  height: 400px;
-  margin-bottom: 50px;
+  width: 200px;
+  height: 300px;
 }
 
 .detailsViewer {
-  line-height: 4vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.detailsViewer h1 {
+  text-align: center;
 }
 
 .download-links a {
@@ -40,11 +46,11 @@
   display: flex;
   justify-items: center;
   margin: 10px 0;
-  width: 180px;
+  width: 10vw;
 }
 
 .download-links button {
-  background-color: #008cba; /* Green */
+  background-color: #008cba;
   border: none;
   color: white;
   padding: 13px;
@@ -65,8 +71,7 @@
 
 @media (max-width: 1100px) {
   .viewerContainer {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 5rem !important;
+    flex-direction: column;
+    width: 100vw;
   }
 }

@@ -1,12 +1,12 @@
 import LoginButton from "./components/Login/Login";
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Card from "./components/Card/Card";
 import { gapi } from "gapi-script";
 import "./app.css";
 
-import AuthorPage from "./components/AuthorPage/AuthorPage";
-import BookViewer from "./components/BookViewer/BookViewer";
+import AuthorPage from "./pages/AuthorPage/AuthorPage";
+import Card from "./pages/Card/Card";
+import BookViewer from "./pages/BookViewer/BookViewer";
 
 const client_id =
   "778513930561-lp2v2hq2taq7m47bcocq6el2pa1jkkcq.apps.googleusercontent.com";

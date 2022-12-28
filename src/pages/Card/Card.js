@@ -1,22 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import { useLocation } from "react-router-dom";
 import defaultAuthor from "../../Images/defaultAuthor.jpg";
+import ReactPaginate from "react-paginate";
 
 import "./Card.css";
 
 const Card = () => {
   const { state } = useLocation();
+  const [pageNumber, setPageNumber] = useState(0);
 
   console.log(state);
 
   const navigate = useNavigate();
 
+  const cardsPerPage = 8;
+  const pagesVisited = pageNumber * cardsPerPage;
+
+  const displayCards = state.slice(pagesVisited, pagesVisited + cardsPerPage);
+
+  const pageCount = Math.ceil(state.length / cardsPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
   return (
     <>
       <div className="card-wrapper">
-        {state
+        {displayCards
           .sort(function (a, b) {
             return (
               new Date(b.volumeInfo.publishedDate) -
@@ -77,6 +90,20 @@ const Card = () => {
               );
             }
           })}
+        <ReactPaginate
+          previousLabel={"<<"}
+          nextLabel={">>"}
+          breakLabel={"..."}
+          pageCount={pageCount}
+          marginPagesDisplayed={1}
+          pageRangeDisplayed={4}
+          onPageChange={changePage}
+          containerClassName={"paginationBttns"}
+          previousLinkClassName={"previousBttn"}
+          nextLinkClassName={"nextBttn"}
+          disabledClassName={"paginationDisabled"}
+          activeClassName={"paginationActive"}
+        />
       </div>
     </>
   );
