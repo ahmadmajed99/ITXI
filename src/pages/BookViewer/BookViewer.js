@@ -48,7 +48,7 @@ const BookViewer = () => {
   return (
     <div className="viewerContainer">
       <div className="viewerProps">
-        <img src={thumbnail} alt="books-image" className="viewerImage" />
+        <img src={thumbnail} alt="" className="viewerImage" />
         <div className="detailsViewer">
           <h1>{state.volumeInfo.title}</h1>
           <h3>{state.volumeInfo.authors}</h3>

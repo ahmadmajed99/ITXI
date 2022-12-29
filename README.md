@@ -41,3 +41,5 @@ iv. Publisher
 v. Language
 d. Clickin on the back button of the browser returns to the previous search results
 in (C)
+
+add typescript, intercept.

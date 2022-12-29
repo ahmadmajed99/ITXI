@@ -50,7 +50,7 @@ const AuthorPage = () => {
               onChange={(event) => setQuery(event.target.value)}
               onKeyPress={navigatebykey}
             />
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
             <div className="listerizo">
               {query
                 ? bookData.map((item, index) => {
